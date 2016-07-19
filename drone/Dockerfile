@@ -40,7 +40,7 @@ RUN wget http://xdebug.org/files/xdebug-2.4.0rc2.tgz && \
     echo 'xdebug.remote_enable=1' >> /etc/php/7.0/cli/conf.d/20-xdebug.ini && \
     cd ../
 
-# composer & coveralls
+# composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     composer self-update
 
