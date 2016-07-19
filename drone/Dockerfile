@@ -4,8 +4,14 @@ ENV TERM=xterm
 ENV DEBIAN_FRONTEND=noninteractive
 
 # initialize
-RUN apt-get update && \
-    apt-get -y install zip unzip dialog pkg-config wget git
+RUN apt-get update && apt-get -y install \
+                                 zip \
+                                 unzip \
+                                 dialog \
+                                 pkg-config \
+                                 wget \
+                                 git \
+                                 libmagickwand-dev --no-install-recommends
 
 # php7
 RUN apt-get -y install curl php7.0-cli php7.0-dev php-pear php-xml php-mysql php-curl
