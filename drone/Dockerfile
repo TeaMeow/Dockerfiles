@@ -16,6 +16,11 @@ RUN apt-get update && apt-get -y install \
 # php7
 RUN apt-get -y install curl php7.0-cli php7.0-dev php-pear php-xml php-mysql php-curl
 
+# imagick
+RUN printf "\n" | pecl install imagick && \
+    touch /etc/php/7.0/cli/conf.d/20-imagick.ini && \
+    echo "extension=imagick.so" >> /etc/php/7.0/cli/conf.d/20-imagick.ini
+    
 # mysql
 RUN apt-get -y install mysql-server-5.7 && \
     service mysql start && \
