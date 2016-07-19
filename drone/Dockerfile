@@ -30,9 +30,12 @@ RUN wget http://xdebug.org/files/xdebug-2.4.0rc2.tgz && \
 
 # composer & coveralls
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.0/coveralls.phar && \
-    chmod +x coveralls.phar && \
     composer self-update
+
+# coveralls    
+RUN wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.0/coveralls.phar && \
+    chmod +x coveralls.phar && \
+    mv coveralls.phar /usr/local/bin/coveralls
 
 # phpunit
 RUN curl -LO --silent https://phar.phpunit.de/phpunit.phar && \
