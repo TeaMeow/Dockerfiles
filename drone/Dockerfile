@@ -19,7 +19,8 @@ RUN apt-get -y install curl php7.0-cli php7.0-dev php-pear php-xml php-mysql php
 # mysql
 RUN apt-get -y install mysql-server-5.7 && \
     service mysql start && \
-    mysqladmin -u root password ''
+    mysqladmin -u root password '' && \
+    mysql -u root -e "use mysql; update user set authentication_string=password(''), plugin='mysql_native_password' where user='root';"
 
 # xdebug
 RUN wget http://xdebug.org/files/xdebug-2.4.0rc2.tgz && \
