@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y install \
                                  libmagickwand-dev --no-install-recommends
 
 # php7
-RUN apt-get -y installphp7.0-cli php7.0-dev php7.0-mbstring php7.0-curl php7.0-gd php7.0-intl php7.0-mcrypt php7.0-json php7.0-mysql php7.0-opcache php7.0-bcmath php7.0-soap php7.0-xml curl php-pear php-xml php-mysql php-curl
+RUN apt-get -y install php7.0-cli php7.0-dev php7.0-mbstring php7.0-curl php7.0-gd php7.0-intl php7.0-mcrypt php7.0-json php7.0-mysql php7.0-opcache php7.0-bcmath php7.0-soap php7.0-xml curl php-pear php-xml php-mysql php-curl
 
 # imagick
 RUN printf "\n" | pecl install imagick && \
