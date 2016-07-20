@@ -3,6 +3,9 @@ FROM ubuntu:latest
 ENV TERM=xterm
 ENV DEBIAN_FRONTEND=noninteractive
 
+COPY ruby.sh ruby.sh
+COPY sass.sh sass.sh
+
 # initialize
 RUN apt-get update && apt-get -y install    \
                                  zip        \
